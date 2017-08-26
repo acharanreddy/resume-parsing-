@@ -17,7 +17,7 @@ class ResumeParsing:
     def parseAddress():
         tika.initVM()
         parsed = parser.from_file("MyResume.docx")
-        regular_expression = re.compile(r"[0-9]{1,4}\ [\w\s]+\, [\w]+\ [0-9]{1,5}", re.IGNORECASE)
+        regular_expression = re.compile(r"[a-z\s]+,[a-z\s]+\.", re.IGNORECASE)
         result = re.search(regular_expression,parsed["content"])
         print("Address:"+result.group())
     def parseName():
